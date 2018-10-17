@@ -1,27 +1,25 @@
 package com.householdledger.fragment
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
+import android.support.v4.view.PagerAdapter
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.householdledger.R
-import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
-import android.widget.Adapter
-import com.householdledger.adapter.HomeRecyclerAdapter
+import com.householdledger.adapter.HomePagerAdapter
 import com.householdledger.data.HomeData
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class HomeFragment : Fragment() {
-lateinit var adapter : HomeRecyclerAdapter
-var item : ArrayList<HomeData> = ArrayList()
     companion object {
         @JvmStatic
         fun newInstance() = HomeFragment()
@@ -33,33 +31,32 @@ var item : ArrayList<HomeData> = ArrayList()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
         var view = inflater.inflate(R.layout.fragment_home, container, false)
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        view.homeRecycler.layoutManager = layoutManager
 
-        val pref = activity!!.getSharedPreferences("pref", Context.MODE_PRIVATE)
+        val adapter = HomePagerAdapter(childFragmentManager)
+        view.homePager.adapter = adapter
 
-        var setmoney = pref.getInt("setmoney",0)
+        view.homePager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    0 -> {
+                        view.homeSlide2.backgroundTintList = activity!!.resources.getColorStateList(R.color.colorTint)
+                        view.homeSlide1.backgroundTintList = activity!!.resources.getColorStateList(R.color.colorPrimary)
+                    }
 
-        item.add(HomeData(pref.getInt("personalmoney",0),Dday(),"내 잔고"))
-        item.add(HomeData(setmoney,Dday(),"한도까지 남은 금액"))
+                    1 -> {
+                        view.homeSlide1.backgroundTintList = activity!!.resources.getColorStateList(R.color.colorTint)
+                        view.homeSlide2.backgroundTintList = activity!!.resources.getColorStateList(R.color.colorPrimary)
+                    }
+                }
+            }
 
-        adapter = HomeRecyclerAdapter(item)
-        view.homeRecycler.adapter = adapter
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+
         return view
-    }
-
-    fun Dday() : Int{
-        val pref = activity!!.getSharedPreferences("pref", Context.MODE_PRIVATE)
-        var dday = pref.getInt("dday",0)
-        var d = SimpleDateFormat("dd").format(Date())
-
-        var result = Integer.parseInt(d)-dday
-
-        if(result-result!=0){
-            result *= -1
-        }
-
-        return result
     }
 }

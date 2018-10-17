@@ -19,11 +19,11 @@ class ViewPagerAdapter(fm : FragmentManager?,tabCount : Int) : FragmentStatePage
             }
 
             1->{
-                fragment = HouseholdledgerFragment.newInstance()
+                fragment = CommunityFragment.newInstance()
             }
 
             2->{
-                fragment = CommunityFragment.newInstance()
+                fragment = HouseholdledgerFragment.newInstance()
             }
         }
 

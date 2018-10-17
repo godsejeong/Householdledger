@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     companion object {
+        @JvmStatic
         var tutorialchec = 0
     }
 
