@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Tutorial1Activity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_logo"></ImageView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_app_login"></ImageView>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/tuorial1Layout"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="156dp"
+            android:background="@drawable/bg_login"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.01"
+                android:text="가게부 리셋 날짜를\n 설정해주세요"
+                android:textColor="#343a40"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/Tutorial1Layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="51dp">
+
+                <ImageView
+                    android:id="@+id/Tutorial1Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="31dp"
+                    android:background="@drawable/calendar" />
+
+                <TextView
+                    android:id="@+id/Tutorial1Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_toRightOf="@+id/Tutorial1Icon"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="10sp"
+                    android:text="2018.10.16"
+                    android:textColor="#868e96"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/Tutorial1NextBtn"
+                android:layout_width="64dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="86dp"
+                android:background="@drawable/bg_login_btn"
+                android:letterSpacing="0.05"
+                android:text="다음"
+                android:textColor="#f8f9fa"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tuorial1Layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tutorial" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tutorial"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="#adb5bd"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tutorial"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="#adb5bd" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tutorial"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="#adb5bd" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

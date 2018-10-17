@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.Tutorial4Activity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_login_logo" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_app_login" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/tuoria4Layout"
+            android:layout_width="315dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="156dp"
+            android:background="@drawable/bg_login"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:letterSpacing="0.01"
+                android:text="홀드화면에 표시될 문구를\n 설정해주세요"
+                android:textColor="#343a40"
+                android:textSize="20sp" />
+
+            <RelativeLayout
+                android:id="@+id/Tutorial4Layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="51dp">
+
+
+                <Spinner
+                    android:id="@+id/Tutorial4Spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#868e96"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/Tutorial4BackBtn"
+                    android:layout_width="64dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="86dp"
+                    android:background="@drawable/bg_login_btn"
+                    android:backgroundTint="#ee98fb"
+                    android:letterSpacing="0.05"
+                    android:text="이전"
+                    android:textColor="#f8f9fa"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/Tutorial4NextBtn"
+                    android:layout_width="64dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="86dp"
+                    android:layout_toRightOf="@+id/Tutorial4BackBtn"
+                    android:background="@drawable/bg_login_btn"
+                    android:letterSpacing="0.05"
+                    android:text="완료"
+                    android:textColor="#f8f9fa"
+                    android:textSize="14sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tuoria4Layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_tutorial"
+                android:backgroundTint="#adb5bd" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/bg_tutorial"
+                android:backgroundTint="#adb5bd" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/bg_tutorial"
+                android:backgroundTint="#adb5bd" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/bg_tutorial" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

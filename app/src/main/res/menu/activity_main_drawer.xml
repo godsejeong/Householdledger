@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_user_update"
+            android:title="회원정보수정" />
+        <item
+            android:id="@+id/nav_penalty"
+            android:title="벌칙설정" />
+        <item
+            android:id="@+id/nav_ask"
+            android:title="문의하기" />
+        <item
+            android:id="@+id/nav_information"
+            android:title="이용안내" />
+        <item
+            android:id="@+id/nav_setting"
+            android:title="설정" />
+
+    </group>
+
+    <group android:id="@+id/group2">
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="로그아웃" />
+    </group>
+
+</menu>
