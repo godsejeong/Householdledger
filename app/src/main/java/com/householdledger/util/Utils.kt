@@ -1,6 +1,9 @@
 package com.householdledger.util
 
 import android.content.Context
+import android.util.Log
+import org.json.JSONArray
+import org.json.JSONException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -13,10 +16,34 @@ object Utils{
 
         var result = Integer.parseInt(d)-dday
 
-        if(result-result!=0){
+        Log.e("asdfasdf", result.toString())
+        if(result*-1>0){
             result *= -1
-        }
 
+            Log.e("result","hi")
+        }
+        Log.e("result", result.toString())
         return result
+    }
+
+    fun userprice(context: Context) : Int {
+        var result = 0
+        val pref = context!!.getSharedPreferences(SimpleDateFormat("MM").format(Date()) + "월", Context.MODE_PRIVATE)
+        val json = pref.getString("data", "")
+        try {
+            var array = JSONArray(json)
+            Log.e("test", json)
+            for (i in 0 until array.length()) {
+                var order = array.getJSONObject(i)
+                try {
+                    result += Integer.parseInt(order.getString("price")) * -1
+                } catch (e: JSONException) {
+
+                }
+            }
+            return result
+        }catch (e : JSONException){
+            return 0
+        }
     }
 }

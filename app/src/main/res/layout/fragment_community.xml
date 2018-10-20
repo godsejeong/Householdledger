@@ -7,4 +7,10 @@
     tools:context=".fragment.CommunityFragment">
 
 
+    <WebView
+        android:id="@+id/communityWebview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
+
 </android.support.constraint.ConstraintLayout>

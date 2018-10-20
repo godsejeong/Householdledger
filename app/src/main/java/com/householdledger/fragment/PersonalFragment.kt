@@ -3,12 +3,18 @@ package com.householdledger.fragment
 import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.householdledger.R
 import com.householdledger.util.Utils
 import kotlinx.android.synthetic.main.fragment_personal.view.*
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
+import java.text.SimpleDateFormat
+import java.util.*
 
 class PersonalFragment : Fragment() {
 
@@ -28,9 +34,12 @@ class PersonalFragment : Fragment() {
         val pref = activity!!.getSharedPreferences("pref", Context.MODE_PRIVATE)
 
         var setmoney =  pref.getInt("setmoney",0)
-        view.personalMoney.text = setmoney.toString()
+        view.personalMoney.text = (setmoney - Utils.userprice(activity!!)).toString()
+
         view.personalDay.text = "리셋까지 D-" + Utils.Dday(activity!!).toString()
 
         return view
     }
+
+
 }

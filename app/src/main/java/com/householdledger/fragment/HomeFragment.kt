@@ -1,22 +1,16 @@
 package com.householdledger.fragment
 
-import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
-import android.support.v4.view.PagerAdapter
 import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.householdledger.R
-import android.support.v7.widget.LinearLayoutManager
 import com.householdledger.adapter.HomePagerAdapter
-import com.householdledger.data.HomeData
 import kotlinx.android.synthetic.main.fragment_home.view.*
-import java.text.SimpleDateFormat
-import java.util.*
 
 
 class HomeFragment : Fragment() {

@@ -1,11 +1,13 @@
 package com.householdledger.activity
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.householdledger.R
+import kotlinx.android.synthetic.main.activity_tutorial2.*
 import kotlinx.android.synthetic.main.activity_tutorial3.*
 
 class Tutorial3Activity : AppCompatActivity() {
@@ -13,6 +15,12 @@ class Tutorial3Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutorial3)
+
+        val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        var fix = intent.getStringExtra("fix")
+        if (fix == "fix") {
+            Tutorial3Text.setText(pref.getInt("personalmoney",0).toString())
+        }
 
         Tutorial3NextBtn.setOnClickListener {
             try {
@@ -26,6 +34,7 @@ class Tutorial3Activity : AppCompatActivity() {
                     intent3.putExtra("setmoney",intent.getIntExtra("setmoney",0))
                     intent3.putExtra("setdate",intent.getStringExtra("setdate"))
                     intent3.putExtra("dday",intent.getIntExtra("dday",0))
+                    intent3.putExtra("fix",intent.getStringExtra("fix"))
                     startActivity(intent3)
                     finish()
                 }

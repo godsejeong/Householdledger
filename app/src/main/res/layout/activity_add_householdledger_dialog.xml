@@ -1,9 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_householdledger_layout"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
     tools:context=".AddHouseholdledgerDialog">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="카테고리(필수입력)"
+        android:textColor="#343a40"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingRight="37dp">
+
+        <ImageView
+            android:id="@+id/houseimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_tag" />
+
+        <Spinner
+            android:id="@+id/houseDialogSpinner"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="18dp"
+        android:text="설명"
+        android:textColor="#343a40" />
+
+    <EditText
+        android:id="@+id/houseDialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:textColor="#343a40"
+        android:textSize="13dp"
+        android:theme="@style/textStyle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="18dp"
+        android:text="금액"
+        android:textColor="#343a40" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_won"/>
+
+        <EditText
+            android:id="@+id/houseDialogPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textColor="#343a40"
+            android:layout_marginLeft="3dp"
+            android:textSize="13dp"
+            android:theme="@style/textStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|top"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/houseDialogCancel"
+            android:layout_width="64dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="86dp"
+            android:background="@drawable/bg_login_btn"
+            android:letterSpacing="0.05"
+            android:text="취소"
+            android:backgroundTint="#ee98fb"
+            android:textColor="#f8f9fa"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/houseDialogOk"
+            android:layout_width="64dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="86dp"
+            android:background="@drawable/bg_login_btn"
+            android:letterSpacing="0.05"
+            android:text="입력"
+            android:layout_marginLeft="18dp"
+            android:textColor="#f8f9fa"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

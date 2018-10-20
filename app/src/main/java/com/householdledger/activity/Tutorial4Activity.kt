@@ -11,7 +11,7 @@ import android.widget.Toast
 import com.householdledger.R
 import kotlinx.android.synthetic.main.activity_tutorial4.*
 import android.content.Context
-
+import kotlinx.android.synthetic.main.activity_tutorial3.*
 
 
 class Tutorial4Activity : AppCompatActivity() {
@@ -24,18 +24,14 @@ class Tutorial4Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tutorial4)
-        Log.e("1",personalmoney.toString())
-        Log.e("1", setmoney.toString())
-        Log.e("1",setdate)
 
         textdata.add("문구를 설정해주세요")
-        textdata.add("문구1")
-        textdata.add("문구2")
-        textdata.add("문구3")
+        textdata.add("일찍일어난 새가 교통비를 아낀다")
+        textdata.add("※텅장주의※텅장주의")
+        textdata.add("어제의 라멘 오늘의 라면")
 
         var adatper = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item,textdata)
         Tutorial4Spinner.adapter = adatper
-
 
         Tutorial4Spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {

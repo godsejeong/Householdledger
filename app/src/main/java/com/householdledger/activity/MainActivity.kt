@@ -1,5 +1,7 @@
 package com.householdledger.activity
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.NavigationView
@@ -9,9 +11,14 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
 import com.householdledger.R
+import com.householdledger.SettingActivity
 import com.householdledger.adapter.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import android.R.id.edit
+import android.content.SharedPreferences
+
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
 
@@ -52,7 +59,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
         })
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -62,16 +68,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             }
             R.id.nav_penalty -> {
-
+                var intent = Intent(this@MainActivity,Tutorial1Activity::class.java)
+                intent.putExtra("fix","fix")
+                startActivity(intent)
             }
             R.id.nav_ask -> {
-
+                val it = Intent(this, WebviewActivity::class.java)
+                it.putExtra("link","http://14.63.193.148:2999/QnA")
+                startActivity(it)
             }
             R.id.nav_information -> {
-
+                val it = Intent(this, WebviewActivity::class.java)
+                it.putExtra("link","http://14.63.193.148:2999/help")
+                startActivity(it)
             }
             R.id.nav_logout -> {
 
+
+                val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+                val editor = pref.edit()
+                editor.remove("login")
+                editor.commit()
+                var intent = Intent(this@MainActivity,LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            R.id.nav_setting ->{
+                var intent = Intent(this@MainActivity,SettingActivity::class.java)
+                startActivity(intent)
             }
         }
 
@@ -84,18 +108,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
         }
     }
 }

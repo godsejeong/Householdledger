@@ -28,7 +28,7 @@ class BalanceFragment : Fragment() {
         val pref = activity!!.getSharedPreferences("pref", Context.MODE_PRIVATE)
 
         var money = pref.getInt("personalmoney",0)
-        view.balanceMoney.text = money.toString()
+        view.balanceMoney.text = (money - Utils.userprice(activity!!)).toString()
         view.balanceDay.text = "리셋까지 D-" + Utils.Dday(activity!!).toString()
 
         return view
