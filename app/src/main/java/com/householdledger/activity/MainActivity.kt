@@ -60,23 +60,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_user_update -> {
-
+                var intent = Intent(this@MainActivity,UserSettingActivity::class.java)
+                startActivity(intent)
             }
+
             R.id.nav_penalty -> {
                 var intent = Intent(this@MainActivity,Tutorial1Activity::class.java)
                 intent.putExtra("fix","fix")
                 startActivity(intent)
             }
+
             R.id.nav_ask -> {
                 val it = Intent(this, WebviewActivity::class.java)
                 it.putExtra("link","http://14.63.193.148:2999/QnA")
                 startActivity(it)
             }
+
             R.id.nav_information -> {
                 val it = Intent(this, WebviewActivity::class.java)
                 it.putExtra("link","http://14.63.193.148:2999/help")
                 startActivity(it)
             }
+
             R.id.nav_logout -> {
                 val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
                 val editor = pref.edit()
@@ -86,10 +91,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
                 finish()
             }
+
             R.id.nav_setting ->{
                 var intent = Intent(this@MainActivity, SettingActivity::class.java)
                 startActivity(intent)
             }
+
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

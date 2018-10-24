@@ -16,7 +16,7 @@ class UserSettingActivity : AppCompatActivity() {
 
         setSupportActionBar(usersettingToolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        settingToolbar.setTitleTextColor(Color.WHITE)
+        usersettingToolbar.setTitleTextColor(Color.WHITE)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
