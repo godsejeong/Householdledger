@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UserSettingActivity"
+    android:weightSum="3">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/usersettingToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="설정"
+        app:theme="@style/ThemeOverlay.AppCompat"
+        android:background="@color/colorPrimary">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/userSettingCamera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_user_setting"
+            />
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_camera"
+            />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="28dp"
+        android:layout_height="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="이름"
+            android:textColor="#343a40" />
+
+        <EditText
+            android:id="@+id/usersettingName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#343a40"
+            android:textSize="13dp"
+            android:theme="@style/textStyle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="18dp"
+            android:text="이메일"
+            android:textColor="#343a40" />
+
+        <EditText
+            android:id="@+id/usersettingEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#343a40"
+            android:textSize="13dp"
+            android:theme="@style/textStyle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="18dp"
+            android:text="비밀번호"
+            android:textColor="#343a40" />
+
+        <EditText
+            android:id="@+id/usersettingPd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#343a40"
+            android:textSize="13dp"
+            android:theme="@style/textStyle" />
+
+    </LinearLayout>
+
+</LinearLayout>

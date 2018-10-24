@@ -8,16 +8,11 @@ import android.support.design.widget.NavigationView
 import android.support.design.widget.TabLayout
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.view.Menu
 import android.view.MenuItem
 import com.householdledger.R
-import com.householdledger.SettingActivity
 import com.householdledger.adapter.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import android.R.id.edit
-import android.content.SharedPreferences
-
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener  {
@@ -83,8 +78,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(it)
             }
             R.id.nav_logout -> {
-
-
                 val pref = getSharedPreferences("pref", Context.MODE_PRIVATE)
                 val editor = pref.edit()
                 editor.remove("login")
@@ -94,7 +87,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 finish()
             }
             R.id.nav_setting ->{
-                var intent = Intent(this@MainActivity,SettingActivity::class.java)
+                var intent = Intent(this@MainActivity, SettingActivity::class.java)
                 startActivity(intent)
             }
         }

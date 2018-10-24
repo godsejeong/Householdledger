@@ -26,14 +26,15 @@
         <activity android:name=".activity.Tutorial3Activity" />
         <activity android:name=".activity.Tutorial4Activity" />
         <activity
-            android:name=".activity.LockActivity"
+            android:name=".activity.RockActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTop" />
         <activity android:name=".activity.WebviewActivity" />
 
-        <service android:name=".LockService" />
+        <service android:name=".service.RockService" />
 
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.UserSettingActivity"></activity>
     </application>
 
 </manifest>

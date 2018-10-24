@@ -2,7 +2,6 @@ package com.householdledger.fragment
 
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -34,7 +33,7 @@ import android.widget.ArrayAdapter
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.householdledger.LockService
+import com.householdledger.service.RockService
 import com.householdledger.util.Utils
 import kotlinx.android.synthetic.main.activity_add_householdledger_dialog.*
 import org.json.JSONArray
@@ -65,9 +64,9 @@ class HouseholdledgerFragment : Fragment() {
         val pref = activity!!.getSharedPreferences("pref", Context.MODE_PRIVATE)
         var setmoney =  pref.getInt("setmoney",0)
         if(setmoney - Utils.userprice(activity!!) <= 0){
-           activity!!.startService(Intent(activity, LockService::class.java))
+           activity!!.startService(Intent(activity, RockService::class.java))
         }else{
-            val i = Intent(Intent(activity, LockService::class.java))
+            val i = Intent(Intent(activity, RockService::class.java))
 
             if(activity!!.stopService(i)){
             }else{
