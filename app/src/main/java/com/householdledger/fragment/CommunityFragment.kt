@@ -30,7 +30,7 @@ class CommunityFragment : Fragment() {
         view.communityWebview.webViewClient = WebViewClient()
         val setting =  view.communityWebview.settings
         setting.javaScriptEnabled = true
-        view.communityWebview.loadUrl("http://14.63.193.148:2999/")
+        view.communityWebview.loadUrl("http://203.254.143.143:3000/posts")
         return view
     }
 }

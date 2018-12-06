@@ -72,13 +72,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
             R.id.nav_ask -> {
                 val it = Intent(this, WebviewActivity::class.java)
-                it.putExtra("link","http://14.63.193.148:2999/QnA")
+                it.putExtra("link","http://203.254.143.143:3000/")
                 startActivity(it)
             }
 
             R.id.nav_information -> {
                 val it = Intent(this, WebviewActivity::class.java)
-                it.putExtra("link","http://14.63.193.148:2999/help")
+                it.putExtra("link","http://203.254.143.143:3000/contact")
                 startActivity(it)
             }
 

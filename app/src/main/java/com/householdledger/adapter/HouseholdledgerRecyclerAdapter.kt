@@ -158,7 +158,6 @@ class HouseholdledgerRecyclerAdapter(items: ArrayList<HouseholdledgerData>) : Re
         }
 
         if(count == 0){
-            Log.e("안녕하세요","asdfasdfasdf")
             val pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE)
             val editor = pref.edit()
             editor.putString("today","")
